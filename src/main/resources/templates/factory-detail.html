@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorator="layout/default_layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <div class="row mt-3">
+            <div class="h1">FACTORY NAME</div>
+            <hr>
+            <div class="h2">Camera List</div>
+
+        </div>
+        <div class="row mt-3">
+            <div class="h3">CAMERA NAME</div>
+            <div class="h4">LOCATION</div>
+            <div class="col-md-12 mt-2" th:each="t : ${factorys}"></div>
+            <h3 th:text="${t.name}"></h3>>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Event ID</th>
+                            <th>Created At</th>
+                            <th>Amount</th>
+                        </tr>amount
+                    </thead>
+                    <tbody>
+                        <tr th:each="c : ${t.events}">
+                            <td th:text="${c.id}"></td>
+                            <td th:text="${c.createdAt}"></td>
+                            <td th:text="${c.amount}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
